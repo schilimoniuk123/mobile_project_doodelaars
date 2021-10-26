@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        moveX = Input.acceleration.x * moveSpeed;
+        moveX = Input.acceleration.x * moveSpeed + Input.GetAxis("Horizontal") * moveSpeed;
         //moveX = Input.GetAxis("Horizontal") * moveSpeed;
 
     }
