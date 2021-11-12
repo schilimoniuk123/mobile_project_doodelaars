@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     private float moveX;
 
 
+
+
     private float topScore = 0.0f;
     public Text scoreText;
 
@@ -34,6 +36,8 @@ public class PlayerController : MonoBehaviour
         }
         scoreText.text = "Score: " + Mathf.Round(topScore).ToString();
 
+
+
     }
 
     private void FixedUpdate()
@@ -42,4 +46,7 @@ public class PlayerController : MonoBehaviour
         velocity.x = moveX;
         rb.velocity = velocity;
     }
+
+
+
 }
