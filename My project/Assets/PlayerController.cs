@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D rb;
     private float moveX;
 
-
+    Vector3 characterScale;
     private float topScore = 0.0f;
     public Text scoreText;
 
@@ -25,6 +25,23 @@ public class PlayerController : MonoBehaviour
         moveX = Input.acceleration.x * moveSpeed + Input.GetAxis("Horizontal") * moveSpeed;
         //moveX = Input.GetAxis("Horizontal") * moveSpeed;
 
+
+        Vector3 characterScale = transform.localScale;
+        if ((Input.acceleration.x * moveSpeed > 0.1f) || (Input.GetAxis("Horizontal") > 0) )
+        {
+            //face rechts
+            Debug.Log("rechts");
+            characterScale.x = 3.5f;
+            transform.localScale = characterScale;
+        }
+        else if ((Input.acceleration.x * moveSpeed < -0.1f) || (Input.GetAxis("Horizontal") < 0))
+        {
+            //face links
+            Debug.Log("links");
+            characterScale.x = -3.5f;
+            transform.localScale = characterScale;
+        }
+        
 
         if (rb.velocity.y > 0 && transform.position.y > topScore)
         {

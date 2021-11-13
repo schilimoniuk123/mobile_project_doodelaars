@@ -23,12 +23,28 @@ public class jumpTrigger : MonoBehaviour
         if ((Input.GetMouseButtonDown(0) && canJump) || (Input.touchCount > 0 && canJump))
         {
             Debug.Log("kanker");
-            animator.SetBool("isjumping", true);
+            
             Vector2 velocity = rb.velocity;
             velocity.y = jumpForce;
             rb.velocity = velocity;
         }
+        if (rb.velocity.y > 0)
+        {
+            animator.SetBool("isjumping", true);
+        }
+        if (rb.velocity.y < 0)
+        {
+            animator.SetBool("isfalling", true);
+        }
+        if (rb.velocity.y == 0)
+        {
+            animator.SetBool("isfalling", false);
+            animator.SetBool("isjumping", false);
+        }
+
+        
     }
+
     public void Onlanding()
     {
         animator.SetBool("isjumping", false);
