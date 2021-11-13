@@ -10,12 +10,9 @@ public class PlayerController : MonoBehaviour
     private float moveX;
 
 
-
-
     private float topScore = 0.0f;
     public Text scoreText;
 
-    // Start is called before the first frame update
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();

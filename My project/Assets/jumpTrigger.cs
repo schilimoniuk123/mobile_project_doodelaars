@@ -3,30 +3,37 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class jumpTrigger : MonoBehaviour
+   
 {
     public float jumpForce = 10f;
     public Rigidbody2D rb;
     public bool canJump;
-    private Touch touch;
+
+    public Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("kanker");
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if ( (Input.GetMouseButtonDown(0) && canJump) || (Input.touchCount > 0 && canJump))
+        if ((Input.GetMouseButtonDown(0) && canJump) || (Input.touchCount > 0 && canJump))
         {
-            Debug.Log("kurwa");
+            Debug.Log("kanker");
+            animator.SetBool("isjumping", true);
             Vector2 velocity = rb.velocity;
             velocity.y = jumpForce;
             rb.velocity = velocity;
-            canJump = false;
         }
     }
+    public void Onlanding()
+    {
+        animator.SetBool("isjumping", false);
+    }
+
 
     private void OnTriggerStay2D(Collider2D other)
     {
