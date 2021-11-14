@@ -8,6 +8,7 @@ public class jumpTrigger : MonoBehaviour
     public float jumpForce = 10f;
     public Rigidbody2D rb;
     public bool canJump;
+    public bool landed = true;
 
     public Animator animator;
 
@@ -22,8 +23,8 @@ public class jumpTrigger : MonoBehaviour
     {
         if ((Input.GetMouseButtonDown(0) && canJump) || (Input.touchCount > 0 && canJump))
         {
-            Debug.Log("kanker");
-            
+            landed = false;
+            AudioManager.PlaySound("jump");
             Vector2 velocity = rb.velocity;
             velocity.y = jumpForce;
             rb.velocity = velocity;
@@ -38,6 +39,11 @@ public class jumpTrigger : MonoBehaviour
         }
         if (rb.velocity.y == 0)
         {
+            if (!landed)
+            {
+                AudioManager.PlaySound("land");
+                landed = true;
+            }
             animator.SetBool("isfalling", false);
             animator.SetBool("isjumping", false);
         }

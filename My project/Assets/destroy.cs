@@ -24,18 +24,13 @@ public class destroy : MonoBehaviour
         {
             Destroy(collision.gameObject);
             myPlat = (GameObject)Instantiate(platformprefab, new Vector2(Random.Range(-2.3f, 2.3f), doodler.transform.position.y + (5 + Random.Range(0.1f, 1.8f))), Quaternion.identity);
-            //collision.gameObject.transform.position = new Vector2(Random.Range(-2f, 2f), doodler.transform.position.y + (6 + Random.Range(0.4f, 1f)));
 
         }
         else if (collision.gameObject.name.StartsWith("Doodler"))
         {
+
+            AudioManager.PlaySound("falldown");
             Destroy(collision.gameObject);
         }
-
-
-
-
-        
-        //Destroy(collision.gameObject);
     }
 }
