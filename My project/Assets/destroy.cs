@@ -28,6 +28,7 @@ public class destroy : MonoBehaviour
         }
         else if (collision.gameObject.name.StartsWith("Doodler"))
         {
+            Handheld.Vibrate();
 
             AudioManager.PlaySound("falldown");
             Destroy(collision.gameObject);
