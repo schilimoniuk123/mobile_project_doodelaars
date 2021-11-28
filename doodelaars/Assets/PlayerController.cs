@@ -61,6 +61,10 @@ public class PlayerController : MonoBehaviour
         rb.velocity = velocity;
     }
 
-
+    public void QuitButton()
+    {
+        Application.Quit();
+        Debug.Log("Quit");
+    }
 
 }
