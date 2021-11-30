@@ -30,14 +30,12 @@ public class PlayerController : MonoBehaviour
         if ((Input.acceleration.x * moveSpeed > 0.1f) || (Input.GetAxis("Horizontal") > 0) )
         {
             //face rechts
-            Debug.Log("rechts");
             characterScale.x = 3.5f;
             transform.localScale = characterScale;
         }
         else if ((Input.acceleration.x * moveSpeed < -0.1f) || (Input.GetAxis("Horizontal") < 0))
         {
             //face links
-            Debug.Log("links");
             characterScale.x = -3.5f;
             transform.localScale = characterScale;
         }

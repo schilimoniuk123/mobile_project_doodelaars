@@ -5,6 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    public GameObject retryButton;
+    void Start()
+    {
+        
+        retryButton.hideFlags = HideFlags.HideInHierarchy;
+        retryButton.SetActive(false);
+
+
+    }
 
     public void QuitButton()
     {
@@ -15,6 +24,7 @@ public class MainMenu : MonoBehaviour
     public void Play()
     {
         SceneManager.LoadScene("Game");
+        
     }
 
 }

@@ -10,6 +10,9 @@ public class destroy : MonoBehaviour
     private GameObject myPlat;
     // Start is called before the first frame update
 
+    public GameObject retryButton;
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
@@ -25,8 +28,17 @@ public class destroy : MonoBehaviour
 
             AudioManager.PlaySound("falldown");
             Destroy(collision.gameObject);
+
+            StartCoroutine(RemoveAfterSeconds());
         }
 
+    }
+
+    IEnumerator RemoveAfterSeconds()
+    {
+        yield return new WaitForSeconds(2);
+        retryButton.hideFlags = HideFlags.HideInHierarchy;
+        retryButton.SetActive(true);
     }
 
 }
