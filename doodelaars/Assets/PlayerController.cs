@@ -13,10 +13,15 @@ public class PlayerController : MonoBehaviour
     private float topScore = 0.0f;
     public Text scoreText;
 
+    void Start()
+    {
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
+    }
+
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-                
+        
     }
 
     // Update is called once per frame
@@ -27,13 +32,13 @@ public class PlayerController : MonoBehaviour
 
 
         Vector3 characterScale = transform.localScale;
-        if ((Input.acceleration.x * moveSpeed > 0.1f) || (Input.GetAxis("Horizontal") > 0) )
+        if ((Input.acceleration.x * moveSpeed > 0.2f) || (Input.GetAxis("Horizontal") > 0) )
         {
             //face rechts
             characterScale.x = 3.5f;
             transform.localScale = characterScale;
         }
-        else if ((Input.acceleration.x * moveSpeed < -0.1f) || (Input.GetAxis("Horizontal") < 0))
+        else if ((Input.acceleration.x * moveSpeed < -0.2f) || (Input.GetAxis("Horizontal") < 0))
         {
             //face links
             characterScale.x = -3.5f;
