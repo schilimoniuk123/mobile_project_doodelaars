@@ -262,6 +262,7 @@ GameObject:
   - component: {fileID: 153559898}
   - component: {fileID: 153559897}
   - component: {fileID: 153559896}
+  - component: {fileID: 153559899}
   m_Layer: 5
   m_Name: Pause
   m_TagString: Untagged
@@ -284,10 +285,10 @@ RectTransform:
   m_Father: {fileID: 1310429262}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -463.71, y: 218.07}
-  m_SizeDelta: {x: 97.57, y: 45.975}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 62.785004, y: -39.450012}
+  m_SizeDelta: {x: 97.57001, y: 45.975006}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &153559896
 MonoBehaviour:
@@ -383,6 +384,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 153559894}
   m_CullTransparentMesh: 1
+--- !u!114 &153559899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153559894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43b829fc1140af941b8f16de5d024830, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resumeButton: {fileID: 1074681914}
 --- !u!1001 &209908845
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1907,6 +1921,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43b829fc1140af941b8f16de5d024830, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  resumeButton: {fileID: 0}
 --- !u!1001 &1325767559
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2891,7 +2906,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec31690292cbc0845928290133711dea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  retryButton: {fileID: 0}
+  retryButton: {fileID: 2057847726}
 --- !u!1 &2057847726
 GameObject:
   m_ObjectHideFlags: 0
