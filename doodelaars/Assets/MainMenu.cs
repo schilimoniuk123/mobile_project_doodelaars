@@ -12,7 +12,6 @@ public class MainMenu : MonoBehaviour
         retryButton.hideFlags = HideFlags.HideInHierarchy;
         retryButton.SetActive(false);
 
-
     }
 
     public void QuitButton()

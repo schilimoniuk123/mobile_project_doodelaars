@@ -396,7 +396,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43b829fc1140af941b8f16de5d024830, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resumeButton: {fileID: 1074681914}
+  PauseScreen: {fileID: 0}
+  PauseButton: {fileID: 0}
 --- !u!1001 &209908845
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1516,6 +1517,85 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &715077212
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 715077213}
+  - component: {fileID: 715077215}
+  - component: {fileID: 715077214}
+  m_Layer: 5
+  m_Name: TextPauseScreen
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &715077213
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 715077212}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1553354281}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 152}
+  m_SizeDelta: {x: 342.35, y: 160.82}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &715077214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 715077212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 5dd49b3eacc540408c98eee0de38e0f1, type: 3}
+    m_FontSize: 60
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 60
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Game Paused
+--- !u!222 &715077215
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 715077212}
+  m_CullTransparentMesh: 1
 --- !u!1001 &1063600769
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1611,13 +1691,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1074681914}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1525874360}
-  m_Father: {fileID: 1310429262}
-  m_RootOrder: 4
+  m_Father: {fileID: 1553354281}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1817,7 +1897,7 @@ RectTransform:
   - {fileID: 1910208539}
   - {fileID: 2057847727}
   - {fileID: 153559895}
-  - {fileID: 1074681915}
+  - {fileID: 1553354281}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1908,7 +1988,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec31690292cbc0845928290133711dea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  retryButton: {fileID: 0}
+  retryButton: {fileID: 2057847726}
 --- !u!114 &1310429266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1921,7 +2001,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43b829fc1140af941b8f16de5d024830, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resumeButton: {fileID: 0}
+  PauseScreen: {fileID: 1553354280}
+  PauseButton: {fileID: 0}
 --- !u!1001 &1325767559
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2337,6 +2418,43 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1525874359}
   m_CullTransparentMesh: 1
+--- !u!1 &1553354280
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1553354281}
+  m_Layer: 5
+  m_Name: PauseScreen
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1553354281
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1553354280}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 715077213}
+  - {fileID: 1074681915}
+  m_Father: {fileID: 1310429262}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -944, y: -404}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1596953196
 GameObject:
   m_ObjectHideFlags: 0

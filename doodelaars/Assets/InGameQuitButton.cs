@@ -2,15 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class InGameQuitButton : MonoBehaviour
 {
 
-    public GameObject resumeButton;
+    public GameObject PauseScreen;
+    public GameObject PauseButton;
+    bool GamePaused;
+
     void Start()
     {
-        
-        resumeButton.SetActive(false);
+        GamePaused = false;
+    }
+
+    void Update()
+    {
+        if (GamePaused)
+            Time.timeScale = 0;
+        else
+            Time.timeScale = 1;
     }
     public void QuitButton()
     {
@@ -19,17 +30,16 @@ public class InGameQuitButton : MonoBehaviour
 
     public void PauseGame() 
     {
-        ///TODO poepke genaaid - deze rommel fixe
-        resumeButton.SetActive(true);
-        Debug.Log("eneenjenjejnee");
-        Time.timeScale = 0;
-        Debug.Log("eneenjenjejnee");    
+        GamePaused = true;
+        PauseScreen.SetActive(true);
+        PauseButton.SetActive(false);
     }
 
     public void ResumeGame()
     {
-        resumeButton.SetActive(false);
-        Time.timeScale = 1;
+        GamePaused = false;
+        PauseScreen.SetActive(false);
+        PauseButton.SetActive(false);
     }
 
 }
