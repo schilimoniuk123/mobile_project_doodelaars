@@ -29,6 +29,7 @@ public class destroy : MonoBehaviour
             AudioManager.PlaySound("falldown");
             Destroy(collision.gameObject);
 
+            retryButton.SetActive(true);
             StartCoroutine(RemoveAfterSeconds());
         }
 
