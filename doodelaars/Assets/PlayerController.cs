@@ -32,13 +32,13 @@ public class PlayerController : MonoBehaviour
 
 
         Vector3 characterScale = transform.localScale;
-        if ((Input.acceleration.x * moveSpeed > 0.2f) || (Input.GetAxis("Horizontal") > 0) )
+        if ((Input.acceleration.x * moveSpeed > 0.1f) || (Input.GetAxis("Horizontal") > 0) )
         {
             //face rechts
             characterScale.x = 3.5f;
             transform.localScale = characterScale;
         }
-        else if ((Input.acceleration.x * moveSpeed < -0.2f) || (Input.GetAxis("Horizontal") < 0))
+        else if ((Input.acceleration.x * moveSpeed < -0.1f) || (Input.GetAxis("Horizontal") < 0))
         {
             //face links
             characterScale.x = -3.5f;
@@ -52,9 +52,6 @@ public class PlayerController : MonoBehaviour
 
         }
         scoreText.text = "Score: " + Mathf.Round(topScore).ToString();
-
-
-
     }
 
     private void FixedUpdate()
@@ -67,7 +64,6 @@ public class PlayerController : MonoBehaviour
     public void QuitButton()
     {
         Application.Quit();
-        Debug.Log("Quit");
     }
 
 }

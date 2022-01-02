@@ -8,6 +8,8 @@ public class destroy : MonoBehaviour
     public GameObject doodler;
     public GameObject platformprefab;
     private GameObject myPlat;
+    public GameObject pauseButton;
+    public ShakeCamera shakeCamera;
     // Start is called before the first frame update
 
     public GameObject retryButton;
@@ -24,19 +26,27 @@ public class destroy : MonoBehaviour
         else if (collision.gameObject.name.StartsWith("Doodler"))
         {
 
-            Handheld.Vibrate();
+            
 
             AudioManager.PlaySound("falldown");
             Destroy(collision.gameObject);
-
             retryButton.SetActive(true);
+            StartCoroutine(HitGround());
             StartCoroutine(RemoveAfterSeconds());
         }
 
     }
 
+    IEnumerator HitGround()
+    {
+        yield return new WaitForSeconds(1.25f);
+        Handheld.Vibrate();
+        StartCoroutine(shakeCamera.Shake(.5f, .1f));
+    }
     IEnumerator RemoveAfterSeconds()
     {
+        pauseButton.SetActive(false);
+        
         yield return new WaitForSeconds(2);
         retryButton.hideFlags = HideFlags.HideInHierarchy;
         retryButton.SetActive(true);

@@ -11,14 +11,31 @@ public class ScreenWrap : MonoBehaviour
 	public BoxCollider2D RigthWall;
     private Boolean entertimeout = true;
 
+
+    void Start()
+    {
+        Camera camera = Camera.main;
+        float halfHeight = camera.orthographicSize;
+        float halfWidth = camera.aspect * halfHeight;
+
+        var horizontalMin = -halfWidth - (RigthWall.size.x / 2 + RigthWall.size.x / 4);
+        var horizontalMax = halfWidth + (LeftWall.size.x / 2 + RigthWall.size.x / 4);
+
+
+        RigthWall.transform.position = new Vector2(horizontalMax, 0f);
+        LeftWall.transform.position = new Vector2(horizontalMin, 0f);
+
+
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
+
         if (other.gameObject.tag == "RightWall" && entertimeout)
         {
             entertimeout = false;
             float x = transform.position.x;
 
-            Debug.Log("bal");
             Debug.Log(transform.position.x / 2);
             transform.position = new Vector3(x - x - x + 0.2f, transform.position.y, transform.position.z);
             StartCoroutine(enumtimeout());
@@ -30,10 +47,9 @@ public class ScreenWrap : MonoBehaviour
             entertimeout = false;
             float y = transform.position.x;
 
-            Debug.Log("bol");
             Debug.Log(transform.position.x / 2);
             transform.position = new Vector3(y - y - y - 0.2f, transform.position.y, transform.position.z);
-            StartCoroutine (enumtimeout());
+            StartCoroutine(enumtimeout());
         }
     }
 
