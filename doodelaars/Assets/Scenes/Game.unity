@@ -312,7 +312,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 102176631}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.71, y: 10.05, z: 10}
+  m_LocalPosition: {x: -0.62, y: 12.97, z: 10}
   m_LocalScale: {x: 11.290964, y: 8.831367, z: 3.041337}
   m_Children: []
   m_Father: {fileID: 519420032}
@@ -332,10 +332,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LightType: 1
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.48
-  m_Color: {r: 0.504717, g: 0.70260423, b: 1, a: 1}
+  m_FalloffIntensity: 0.797
+  m_Color: {r: 0.23113209, g: 0.5362383, b: 1, a: 1}
   m_Intensity: 1
-  m_LightVolumeOpacity: 0.139
+  m_LightVolumeOpacity: 0.604
   m_ApplyToSortingLayers: bbda9a10000000007b7a1f24
   m_LightCookieSprite: {fileID: 0}
   m_UseNormalMap: 1
@@ -628,7 +628,7 @@ MonoBehaviour:
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 0.8509233, b: 0.47843137, a: 1}
   m_Intensity: 1
-  m_LightVolumeOpacity: 0.032
+  m_LightVolumeOpacity: 0.101
   m_ApplyToSortingLayers: 000000007b7a1f24
   m_LightCookieSprite: {fileID: 21300000, guid: eb7a58ae547f7e9499dbd303c88a09f4, type: 3}
   m_UseNormalMap: 1
@@ -797,7 +797,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 0.9298698, g: 0.8066038, b: 1, a: 1}
-  m_Intensity: 0.1
+  m_Intensity: 0.2
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: bbda9a1000000000
   m_LightCookieSprite: {fileID: 0}
@@ -6635,7 +6635,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 625060268}
-  m_LocalRotation: {x: -0, y: 0, z: -0.00919947, w: 0.9999577}
+  m_LocalRotation: {x: -0, y: -0, z: 0.0012464174, w: 0.9999992}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -6656,11 +6656,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LightType: 3
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.673
-  m_Color: {r: 1, g: 0.9380746, b: 0.7783019, a: 1}
+  m_FalloffIntensity: 0.844
+  m_Color: {r: 1, g: 0.958954, b: 0.8537736, a: 1}
   m_Intensity: 0.5
-  m_LightVolumeOpacity: 0.239
-  m_ApplyToSortingLayers: 00000000
+  m_LightVolumeOpacity: 0.566
+  m_ApplyToSortingLayers: bbda9a10000000007b7a1f24
   m_LightCookieSprite: {fileID: 0}
   m_UseNormalMap: 1
   m_LightOrder: 0
@@ -6670,7 +6670,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 3.8941393
+  m_PointLightOuterRadius: 4.692822
   m_PointLightDistance: 3
   m_PointLightQuality: 1
   m_ShapeLightParametricSides: 5
@@ -7809,7 +7809,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 7
   m_Sprite: {fileID: 2281159582846828405, guid: 79e20a5444e28414ebb6eeb98e9ce2b8, type: 3}
-  m_Color: {r: 1, g: 0.9450181, b: 0.6084906, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
