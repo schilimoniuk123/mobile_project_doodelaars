@@ -8,13 +8,14 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 10f;
     public Rigidbody2D rb;
     private float moveX;
-
     Vector3 characterScale;
     private float topScore = 0.0f;
     public Text scoreText;
+    public InGameQuitButton inGameQuit;
 
     void Start()
     {
+        inGameQuit = FindObjectOfType<InGameQuitButton>();
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
     }
 
@@ -31,14 +32,15 @@ public class PlayerController : MonoBehaviour
         //moveX = Input.GetAxis("Horizontal") * moveSpeed;
 
 
+        
         Vector3 characterScale = transform.localScale;
-        if ((Input.acceleration.x * moveSpeed > 0.1f) || (Input.GetAxis("Horizontal") > 0) )
+        if ((Input.acceleration.x * moveSpeed > 0.15f) || (Input.GetAxis("Horizontal") > 0) && rb.velocity.x != Vector3.zero.x )
         {
             //face rechts
             characterScale.x = 3.5f;
             transform.localScale = characterScale;
         }
-        else if ((Input.acceleration.x * moveSpeed < -0.1f) || (Input.GetAxis("Horizontal") < 0))
+        else if ((Input.acceleration.x * moveSpeed < -0.15f) || (Input.GetAxis("Horizontal") < 0) && rb.velocity.x != Vector3.zero.x)
         {
             //face links
             characterScale.x = -3.5f;

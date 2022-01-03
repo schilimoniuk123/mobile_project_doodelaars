@@ -9,7 +9,7 @@ public class InGameQuitButton : MonoBehaviour
 
     public GameObject PauseScreen;
     public GameObject PauseButton;
-    bool GamePaused = false;
+    public bool GamePaused = false;
     bool setOnce = false;
 
     void Start()
@@ -57,6 +57,11 @@ public class InGameQuitButton : MonoBehaviour
         PauseScreen.SetActive(false);
         PauseButton.SetActive(true);
         setOnce = false;
+    }
+
+    public InGameQuitButton getClass()
+    {
+        return this.getClass();
     }
 
 }

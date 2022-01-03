@@ -9,6 +9,7 @@ public class jumpTrigger : MonoBehaviour
     public Rigidbody2D rb;
     public bool canJump;
     public bool landed = true;
+    public ShakeCamera shakeCamera;
 
     public Animator animator;
 
@@ -29,6 +30,7 @@ public class jumpTrigger : MonoBehaviour
             Vector2 velocity = rb.velocity;
             velocity.y = jumpForce;
             rb.velocity = velocity;
+            StartCoroutine(shakeCamera.Shake(.07f, .04f));
         }
         else if (landed && SystemInfo.deviceType == DeviceType.Handheld)
         {
@@ -47,19 +49,24 @@ public class jumpTrigger : MonoBehaviour
         {
             animator.SetBool("isjumping", true);
             landed = false;
+            canJump = false;
+            
         }
         else if (rb.velocity.y < 0)
         {
             animator.SetBool("isfalling", true);
             landed = false;
+            canJump = false;
         }
         else if (rb.velocity.y == 0)
         {
             if (!landed)
             {
+                
                 AudioManager.PlaySound("land");
                 landed = true;
-                //canJump = true;
+                
+                StartCoroutine(shakeCamera.Shake(.07f, .04f));
             }
             animator.SetBool("isfalling", false);
             animator.SetBool("isjumping", false);
