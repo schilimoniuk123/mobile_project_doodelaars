@@ -9,7 +9,8 @@ public class InGameQuitButton : MonoBehaviour
 
     public GameObject PauseScreen;
     public GameObject PauseButton;
-    bool GamePaused;
+    bool GamePaused = false;
+    bool setOnce = false;
 
     void Start()
     {
@@ -19,9 +20,22 @@ public class InGameQuitButton : MonoBehaviour
     void Update()
     {
         if (GamePaused)
+        {
             Time.timeScale = 0;
+            if (!setOnce)
+            {
+                PauseGame();
+            }
+        }
         else
+        {
             Time.timeScale = 1;
+            if (setOnce)
+            {
+                ResumeGame();
+            }
+        }
+            
     }
     public void QuitButton()
     {
@@ -32,14 +46,17 @@ public class InGameQuitButton : MonoBehaviour
     {
         GamePaused = true;
         PauseScreen.SetActive(true);
+        PauseButton.hideFlags = HideFlags.HideInHierarchy;
         PauseButton.SetActive(false);
+        setOnce = true;
     }
 
     public void ResumeGame()
     {
         GamePaused = false;
         PauseScreen.SetActive(false);
-        PauseButton.SetActive(false);
+        PauseButton.SetActive(true);
+        setOnce = false;
     }
 
 }

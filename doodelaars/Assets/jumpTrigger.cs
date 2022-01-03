@@ -24,25 +24,42 @@ public class jumpTrigger : MonoBehaviour
         if ((Input.GetMouseButtonDown(0) && canJump) || (Input.touchCount > 0 && canJump))
         {
             landed = false;
+            canJump = false;
             AudioManager.PlaySound("jump");
             Vector2 velocity = rb.velocity;
             velocity.y = jumpForce;
             rb.velocity = velocity;
         }
+        else if (landed && SystemInfo.deviceType == DeviceType.Handheld)
+        {
+            if (Input.touchCount == 0)
+            {
+                canJump = true;
+            }
+        }
+        else if (landed && SystemInfo.deviceType == DeviceType.Desktop)
+        {
+            canJump = true;
+        }
+
+
         if (rb.velocity.y > 0)
         {
             animator.SetBool("isjumping", true);
+            landed = false;
         }
-        if (rb.velocity.y < 0)
+        else if (rb.velocity.y < 0)
         {
             animator.SetBool("isfalling", true);
+            landed = false;
         }
-        if (rb.velocity.y == 0)
+        else if (rb.velocity.y == 0)
         {
             if (!landed)
             {
                 AudioManager.PlaySound("land");
                 landed = true;
+                //canJump = true;
             }
             animator.SetBool("isfalling", false);
             animator.SetBool("isjumping", false);
@@ -59,11 +76,11 @@ public class jumpTrigger : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        canJump = true;
+        //canJump = true;
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        canJump = false;
+        //canJump = false;
     }
 
 }

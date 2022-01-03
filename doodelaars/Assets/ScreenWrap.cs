@@ -14,9 +14,9 @@ public class ScreenWrap : MonoBehaviour
 
     void Start()
     {
-        Camera camera = Camera.main;
-        float halfHeight = camera.orthographicSize;
-        float halfWidth = camera.aspect * halfHeight;
+        //Camera camera = Camera.main;
+        float halfHeight = mainCam.orthographicSize;
+        float halfWidth = mainCam.aspect * halfHeight;
 
         var horizontalMin = -halfWidth - (RigthWall.size.x / 2 + RigthWall.size.x / 4);
         var horizontalMax = halfWidth + (LeftWall.size.x / 2 + RigthWall.size.x / 4);
@@ -36,7 +36,6 @@ public class ScreenWrap : MonoBehaviour
             entertimeout = false;
             float x = transform.position.x;
 
-            Debug.Log(transform.position.x / 2);
             transform.position = new Vector3(x - x - x + 0.2f, transform.position.y, transform.position.z);
             StartCoroutine(enumtimeout());
         }
@@ -47,7 +46,6 @@ public class ScreenWrap : MonoBehaviour
             entertimeout = false;
             float y = transform.position.x;
 
-            Debug.Log(transform.position.x / 2);
             transform.position = new Vector3(y - y - y - 0.2f, transform.position.y, transform.position.z);
             StartCoroutine(enumtimeout());
         }
@@ -55,10 +53,8 @@ public class ScreenWrap : MonoBehaviour
 
     IEnumerator enumtimeout()
     {
-        Debug.Log(entertimeout);
-        yield return new WaitForSeconds(0.01f);
+        yield return new WaitForSecondsRealtime(0.01f);
         entertimeout = true;
-        Debug.Log(entertimeout);
     }
 
 }

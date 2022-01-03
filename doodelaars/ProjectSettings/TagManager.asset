@@ -13,7 +13,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - explode
   - 
   - 
   - 
@@ -40,6 +40,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: back
+    uniqueID: 278583995
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: front
+    uniqueID: 606042747
     locked: 0

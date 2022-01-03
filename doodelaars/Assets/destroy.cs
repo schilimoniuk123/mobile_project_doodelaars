@@ -25,11 +25,8 @@ public class destroy : MonoBehaviour
         }
         else if (collision.gameObject.name.StartsWith("Doodler"))
         {
-
-            
-
             AudioManager.PlaySound("falldown");
-            Destroy(collision.gameObject);
+            Destroy(collision.gameObject, 1f);
             retryButton.SetActive(true);
             StartCoroutine(HitGround());
             StartCoroutine(RemoveAfterSeconds());
@@ -39,7 +36,7 @@ public class destroy : MonoBehaviour
 
     IEnumerator HitGround()
     {
-        yield return new WaitForSeconds(1.25f);
+        yield return new WaitForSecondsRealtime(1.25f);
         Handheld.Vibrate();
         StartCoroutine(shakeCamera.Shake(.5f, .1f));
     }
@@ -47,7 +44,7 @@ public class destroy : MonoBehaviour
     {
         pauseButton.SetActive(false);
         
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSecondsRealtime(2);
         retryButton.hideFlags = HideFlags.HideInHierarchy;
         retryButton.SetActive(true);
     }
