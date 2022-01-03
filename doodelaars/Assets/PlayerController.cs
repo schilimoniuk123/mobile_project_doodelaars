@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     private float topScore = 0.0f;
     public Text scoreText;
     public InGameQuitButton inGameQuit;
+    public Animator animator;
 
     void Start()
     {
@@ -66,6 +67,11 @@ public class PlayerController : MonoBehaviour
     public void QuitButton()
     {
         Application.Quit();
+    }
+
+    public void QuitBored()
+    {
+        animator.SetBool("isBored", false);
     }
 
 }

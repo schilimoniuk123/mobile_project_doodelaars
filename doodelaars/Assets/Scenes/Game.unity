@@ -7761,6 +7761,7 @@ GameObject:
   - component: {fileID: 1397560504}
   - component: {fileID: 1397560507}
   - component: {fileID: 1397560508}
+  - component: {fileID: 1397560509}
   m_Layer: 0
   m_Name: Doodler
   m_TagString: Untagged
@@ -7853,6 +7854,7 @@ MonoBehaviour:
   rb: {fileID: 1397560505}
   scoreText: {fileID: 586148420}
   inGameQuit: {fileID: 0}
+  animator: {fileID: 0}
 --- !u!50 &1397560505
 Rigidbody2D:
   serializedVersion: 4
@@ -7934,6 +7936,23 @@ MonoBehaviour:
   mainCam: {fileID: 519420031}
   LeftWall: {fileID: 1065849480}
   RigthWall: {fileID: 242798417}
+--- !u!114 &1397560509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1397560501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03203795a716c8f4c9d802c25e9427bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 10
+  rb: {fileID: 0}
+  scoreText: {fileID: 0}
+  inGameQuit: {fileID: 0}
+  animator: {fileID: 1397560507}
 --- !u!1 &1525874359
 GameObject:
   m_ObjectHideFlags: 0
@@ -9054,4 +9073,5 @@ MonoBehaviour:
   canJump: 0
   landed: 1
   shakeCamera: {fileID: 519420035}
+  isGettingBored: 0
   animator: {fileID: 1397560507}

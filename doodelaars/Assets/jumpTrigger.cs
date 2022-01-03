@@ -10,6 +10,7 @@ public class jumpTrigger : MonoBehaviour
     public bool canJump;
     public bool landed = true;
     public ShakeCamera shakeCamera;
+    public bool isGettingBored = false;
 
     public Animator animator;
 
@@ -47,36 +48,55 @@ public class jumpTrigger : MonoBehaviour
 
         if (rb.velocity.y > 0)
         {
+            animator.SetBool("isfalling", false);
             animator.SetBool("isjumping", true);
             landed = false;
             canJump = false;
-            
+            isGettingBored = false;
+
         }
         else if (rb.velocity.y < 0)
         {
+            animator.SetBool("isjumping", false);
             animator.SetBool("isfalling", true);
             landed = false;
             canJump = false;
+            isGettingBored = false;
         }
         else if (rb.velocity.y == 0)
         {
             if (!landed)
             {
-                
                 AudioManager.PlaySound("land");
                 landed = true;
-                
                 StartCoroutine(shakeCamera.Shake(.07f, .04f));
+                StartCoroutine(Bored());
             }
             animator.SetBool("isfalling", false);
             animator.SetBool("isjumping", false);
+            
         }
+    }
 
+    private IEnumerator Bored()
+    {
+        isGettingBored = true;
+        yield return new WaitForSecondsRealtime(Random.Range(1, 10f));
+        if (!animator.GetBool("isfalling") && !animator.GetBool("isjumping") && isGettingBored)
+        {
+            animator.SetBool("isBored", true);
+            isGettingBored = false;
+        }
         
+    }
+    public void OutOfBored()
+    {
+        animator.SetBool("isBored", false);
     }
 
     public void Onlanding()
     {
+        animator.SetBool("isfalling", false);
         animator.SetBool("isjumping", false);
     }
 
