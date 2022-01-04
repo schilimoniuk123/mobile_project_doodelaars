@@ -7621,11 +7621,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5978091670119557928, guid: 6b67f01ada6b0404fa00e513d35b6a04, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.33
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 5978091670119557928, guid: 6b67f01ada6b0404fa00e513d35b6a04, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.11
+      value: -2.78
       objectReference: {fileID: 0}
     - target: {fileID: 5978091670119557928, guid: 6b67f01ada6b0404fa00e513d35b6a04, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7854,7 +7854,6 @@ MonoBehaviour:
   rb: {fileID: 1397560505}
   scoreText: {fileID: 586148420}
   inGameQuit: {fileID: 0}
-  animator: {fileID: 0}
 --- !u!50 &1397560505
 Rigidbody2D:
   serializedVersion: 4
@@ -7945,13 +7944,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1397560501}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03203795a716c8f4c9d802c25e9427bf, type: 3}
+  m_Script: {fileID: 11500000, guid: a1d0302d9852eac4fa4fae3ce81b7125, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
-  rb: {fileID: 0}
-  scoreText: {fileID: 0}
-  inGameQuit: {fileID: 0}
   animator: {fileID: 1397560507}
 --- !u!1 &1525874359
 GameObject:
