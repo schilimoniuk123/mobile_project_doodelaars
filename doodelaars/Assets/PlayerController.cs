@@ -12,7 +12,6 @@ public class PlayerController : MonoBehaviour
     private float topScore = 0.0f;
     public Text scoreText;
     public InGameQuitButton inGameQuit;
-    public Animator animator;
 
     void Start()
     {
@@ -35,13 +34,13 @@ public class PlayerController : MonoBehaviour
 
         
         Vector3 characterScale = transform.localScale;
-        if ((Input.acceleration.x * moveSpeed > 0.15f) || (Input.GetAxis("Horizontal") > 0) && rb.velocity.x != Vector3.zero.x )
+        if ((Input.acceleration.x * moveSpeed > 0.15f) || (Input.GetAxis("Horizontal") > 0.2) && rb.velocity.x != Vector3.zero.x )
         {
             //face rechts
             characterScale.x = 3.5f;
             transform.localScale = characterScale;
         }
-        else if ((Input.acceleration.x * moveSpeed < -0.15f) || (Input.GetAxis("Horizontal") < 0) && rb.velocity.x != Vector3.zero.x)
+        else if ((Input.acceleration.x * moveSpeed < -0.15f) || (Input.GetAxis("Horizontal") < -0.2) && rb.velocity.x != Vector3.zero.x)
         {
             //face links
             characterScale.x = -3.5f;
@@ -68,10 +67,4 @@ public class PlayerController : MonoBehaviour
     {
         Application.Quit();
     }
-
-    public void QuitBored()
-    {
-        animator.SetBool("isBored", false);
-    }
-
 }

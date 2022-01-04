@@ -36,7 +36,7 @@ public class ScreenWrap : MonoBehaviour
             entertimeout = false;
             float x = transform.position.x;
 
-            transform.position = new Vector3(x - x - x + 0.2f, transform.position.y, transform.position.z);
+            transform.position = new Vector3(x - x - x + 0.25f, transform.position.y, transform.position.z);
             StartCoroutine(enumtimeout());
         }
 
@@ -46,14 +46,14 @@ public class ScreenWrap : MonoBehaviour
             entertimeout = false;
             float y = transform.position.x;
 
-            transform.position = new Vector3(y - y - y - 0.2f, transform.position.y, transform.position.z);
+            transform.position = new Vector3(y - y - y - 0.25f, transform.position.y, transform.position.z);
             StartCoroutine(enumtimeout());
         }
     }
 
     IEnumerator enumtimeout()
     {
-        yield return new WaitForSecondsRealtime(0.01f);
+        yield return new WaitForSecondsRealtime(0.015f);
         entertimeout = true;
     }
 
