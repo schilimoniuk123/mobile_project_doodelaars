@@ -103,7 +103,14 @@ public class jumpTrigger : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        //canJump = true;
+        if (other.tag == "Trampoline")
+        {
+            this.jumpForce = 15f;
+        }
+        else
+        {
+            this.jumpForce = 10f;
+        }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {

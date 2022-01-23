@@ -10,6 +10,8 @@ public class destroy : MonoBehaviour
     private GameObject myPlat;
     public GameObject pauseButton;
     public ShakeCamera shakeCamera;
+    public GameObject trampolinePrefab;
+
     // Start is called before the first frame update
 
     public GameObject retryButton;
@@ -17,11 +19,18 @@ public class destroy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
-        if (collision.gameObject.name.StartsWith("Platform"))
+        if (collision.gameObject.name.StartsWith("Platform") || collision.gameObject.name.StartsWith("Trampoline"))
         {
+            int i = Random.Range(1, 100);
+            if (i > 5)
+            {
+                myPlat = (GameObject)Instantiate(platformprefab, new Vector2(Random.Range(-2.3f, 2.3f), doodler.transform.position.y + (5 + Random.Range(0.1f, 1.0f))), Quaternion.identity);
+            }
+            else if (i <= 5)
+            {
+                myPlat = (GameObject)Instantiate(trampolinePrefab, new Vector2(Random.Range(-2.3f, 2.3f), doodler.transform.position.y + (5 + Random.Range(0.1f, 1.0f))), Quaternion.identity);
+            }
             Destroy(collision.gameObject);
-            myPlat = (GameObject)Instantiate(platformprefab, new Vector2(Random.Range(-2.3f, 2.3f), doodler.transform.position.y + (5 + Random.Range(0.1f, 1.8f))), Quaternion.identity);
         }
         else if (collision.gameObject.name.StartsWith("Doodler"))
         {
